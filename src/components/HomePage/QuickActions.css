@@ -1,0 +1,35 @@
+.quick-actions {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  margin-bottom: 40px;
+}
+
+.new-search-button,
+.search-history-button {
+  padding: 12px 24px;
+  font-size: 1rem;
+  font-weight: 600;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.new-search-button {
+  background-color: #6b21cd;
+  color: white;
+}
+
+.new-search-button:hover {
+  background-color: #4c1d95;
+}
+
+.search-history-button {
+  background-color: #e0e0e0;
+  color: #333;
+}
+
+.search-history-button:hover {
+  background-color: #ccc;
+}

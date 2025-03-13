@@ -1,0 +1,85 @@
+/* Hero Section Styles */
+.hero {
+  text-align: center;
+  padding: 100px 20px;
+  background: linear-gradient(135deg, #6a11cb, #2575fc, #ff9a9e, #fad0c4); /* Gradient colors */
+  background-size: 400% 400%; /* Larger background size for animation */
+  color: white;
+  border-radius: 10px;
+  margin: 20px auto;
+  width: 100%; /* Full width */
+  max-width: 800px; /* Match form width */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  position: relative;
+  overflow: hidden;
+  box-sizing: border-box; /* Include padding in width calculation */
+  animation: GradientBackground 15s ease infinite; /* Gradient animation */
+}
+
+/* Hero Illustration */
+.hero-illustration {
+  width: 200px; /* Adjust the size as needed */
+  margin-bottom: 20px;
+  position: relative;
+  z-index: 1;
+  animation: float 3s ease-in-out infinite; /* Floating animation */
+}
+
+/* Hero Heading */
+.hero h1 {
+  font-size: 2.5rem;
+  font-weight: 700;
+  margin-bottom: 20px;
+  position: relative;
+  z-index: 1;
+}
+
+/* Hero Paragraph */
+.hero p {
+  font-size: 1.2rem;
+  opacity: 0.9;
+  position: relative;
+  z-index: 1;
+}
+
+/* Gradient Background Animation */
+@keyframes GradientBackground {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+/* Floating Animation for Illustration */
+@keyframes float {
+  0% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+
+/* Fade-In Animation */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.hero {
+  animation: fadeIn 1s ease-out, GradientBackground 15s ease infinite; /* Combined animations */
+}
