@@ -5,12 +5,11 @@ const fs = require('fs');
 const path = require('path');
 
 const app = express();
-const port = 3001; // backend port
+const port = 3001;
 
 app.use(cors());
 app.use(bodyParser.json());
 
-// Load users from JSON file
 const usersFile = path.join(__dirname, 'data', 'users.json');
 
 function loadUsers() {
@@ -18,7 +17,6 @@ function loadUsers() {
     const data = fs.readFileSync(usersFile);
     return JSON.parse(data);
   } else {
-    console.log('users.json not found!');
     return [];
   }
 }
@@ -26,7 +24,6 @@ function loadUsers() {
 app.post('/login', (req, res) => {
   const { username, password } = req.body;
   const users = loadUsers();
-
   const user = users.find(u => u.username === username && u.password === password);
 
   if (user) {
@@ -36,7 +33,6 @@ app.post('/login', (req, res) => {
   }
 });
 
-// Start server
 app.listen(port, () => {
-  console.log(`Server running on http://localhost:${port}`);
+  console.log(`Backend running at http://localhost:${port}`);
 });

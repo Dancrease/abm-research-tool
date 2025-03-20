@@ -1,0 +1,170 @@
+body, html {
+  margin: 0;
+  padding: 0;
+  font-family: 'Montserrat Alternates', sans-serif;
+}
+
+.dashboard-container {
+  display: flex;
+  height: 100vh;
+  overflow: hidden;
+  background: linear-gradient(135deg, #2a0d58, #4b0082);
+}
+
+.sidebar {
+  width: 220px;
+  background: #6a0dad;
+  color: #fff;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 20px;
+  position: fixed;
+  height: 100%;
+}
+
+.logo {
+  font-size: 28px;
+  font-weight: bold;
+  margin-bottom: 30px;
+}
+
+.nav-links a {
+  color: #fff;
+  text-decoration: none;
+  display: block;
+  padding: 12px;
+  border-radius: 10px;
+}
+
+.nav-links a.active,
+.nav-links a:hover {
+  background-color: rgba(255, 255, 255, 0.2);
+}
+
+.bottom-links {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.settings-icon {
+  font-size: 20px;
+}
+
+.logout-link {
+  font-size: 14px;
+}
+
+.main-content {
+  margin-left: 220px;
+  width: calc(100% - 220px);
+  padding: 30px;
+  overflow-y: auto;
+  height: 100vh;
+  box-sizing: border-box;
+}
+
+.top-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.welcome-text {
+  color: #fff;
+  font-size: 24px;
+}
+
+.header-icons {
+  display: flex;
+  align-items: center;
+}
+
+.notification-bell {
+  color: gold;
+  font-size: 24px;
+  position: relative;
+  margin-right: 20px;
+  cursor: pointer;
+}
+
+.notification-count {
+  background-color: red;
+  color: white;
+  border-radius: 50%;
+  font-size: 12px;
+  padding: 2px 6px;
+  position: absolute;
+  top: -5px;
+  right: -10px;
+}
+
+.profile-pic {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+}
+
+.ai-insights {
+  margin-top: 30px;
+}
+
+.ai-insights h3 {
+  color: #fff;
+  margin-bottom: 20px;
+}
+
+.insights-cards {
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.insight-card {
+  background: linear-gradient(135deg, #8a2be2, #a855f7);
+  color: white;
+  padding: 20px;
+  border-radius: 16px;
+  width: 300px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.insight-card button {
+  background: #fff;
+  color: #6a0dad;
+  border: none;
+  padding: 8px 12px;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+.divider {
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  margin: 40px 0;
+}
+
+.dashboard-insights h3 {
+  color: #fff;
+  margin-bottom: 20px;
+}
+
+.cards-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 20px;
+}
+
+.dashboard-card {
+  background-color: white;
+  border-radius: 16px;
+  padding: 20px;
+  color: #333;
+}
+
+.dashboard-card h4 {
+  color: #4B0082;
+  margin-bottom: 10px;
+}
