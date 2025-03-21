@@ -1,170 +1,160 @@
-body, html {
+@import url('https://fonts.googleapis.com/css2?family=Montserrat+Alternates:wght@600;700&display=swap');
+
+body, html, #root {
+  height: 100%;
   margin: 0;
-  padding: 0;
   font-family: 'Montserrat Alternates', sans-serif;
 }
 
-.dashboard-container {
+.App {
   display: flex;
   height: 100vh;
-  overflow: hidden;
-  background: linear-gradient(135deg, #2a0d58, #4b0082);
+  background: linear-gradient(180deg, #2e026d 0%, #6e1dd1 100%);
+  color: #ffffff;
 }
 
 .sidebar {
   width: 220px;
-  background: #6a0dad;
-  color: #fff;
+  background-color: #6e1dd1;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  padding: 20px;
-  position: fixed;
-  height: 100%;
+  padding: 20px 0;
 }
 
-.logo {
-  font-size: 28px;
+.sidebar .logo {
+  font-size: 24px;
   font-weight: bold;
-  margin-bottom: 30px;
+  padding-left: 20px;
 }
 
-.nav-links a {
-  color: #fff;
-  text-decoration: none;
-  display: block;
-  padding: 12px;
-  border-radius: 10px;
-}
-
-.nav-links a.active,
-.nav-links a:hover {
-  background-color: rgba(255, 255, 255, 0.2);
-}
-
-.bottom-links {
+.sidebar .menu {
+  margin-top: 30px;
   display: flex;
   flex-direction: column;
-  gap: 10px;
 }
 
-.settings-icon {
-  font-size: 20px;
-}
-
-.logout-link {
-  font-size: 14px;
-}
-
-.main-content {
-  margin-left: 220px;
-  width: calc(100% - 220px);
-  padding: 30px;
-  overflow-y: auto;
-  height: 100vh;
-  box-sizing: border-box;
-}
-
-.top-header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-
-.welcome-text {
+.sidebar .menu button {
+  background: none;
+  border: none;
   color: #fff;
-  font-size: 24px;
-}
-
-.header-icons {
-  display: flex;
-  align-items: center;
-}
-
-.notification-bell {
-  color: gold;
-  font-size: 24px;
-  position: relative;
-  margin-right: 20px;
+  text-align: left;
+  padding: 12px 20px;
+  font-size: 16px;
   cursor: pointer;
 }
 
-.notification-count {
-  background-color: red;
-  color: white;
-  border-radius: 50%;
-  font-size: 12px;
-  padding: 2px 6px;
-  position: absolute;
-  top: -5px;
-  right: -10px;
+.sidebar .menu button:hover {
+  background-color: #4b0cad;
 }
 
-.profile-pic {
-  width: 40px;
-  height: 40px;
-  border-radius: 50%;
+.sidebar .bottom {
+  display: flex;
+  align-items: center;
+  padding-left: 20px;
 }
 
-.ai-insights {
-  margin-top: 30px;
+.content {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  overflow-y: auto;
 }
 
-.ai-insights h3 {
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 40px;
   color: #fff;
+  font-size: 20px;
+}
+
+.header-right {
+  display: flex;
+  align-items: center;
+}
+
+.header-right .icon {
+  margin-left: 20px;
+  font-size: 24px;
+}
+
+.main-container {
+  margin: 0 40px 40px 40px;
+  padding: 30px;
+  background-color: rgba(255, 255, 255, 0.05);
+  border-radius: 20px;
+}
+
+.section-title {
+  color: #ffffff;
+  font-size: 22px;
+  font-weight: 700;
   margin-bottom: 20px;
 }
 
 .insights-cards {
   display: flex;
   gap: 20px;
-  flex-wrap: wrap;
+  margin-bottom: 40px;
 }
 
 .insight-card {
-  background: linear-gradient(135deg, #8a2be2, #a855f7);
-  color: white;
+  flex: 1;
+  background: linear-gradient(135deg, #9b34ef, #6e1dd1);
   padding: 20px;
   border-radius: 16px;
-  width: 300px;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+  color: #fff;
 }
 
 .insight-card button {
-  background: #fff;
-  color: #6a0dad;
+  background-color: #fff;
+  color: #6e1dd1;
+  font-weight: 600;
   border: none;
-  padding: 8px 12px;
   border-radius: 8px;
+  padding: 10px 16px;
   cursor: pointer;
 }
 
-.divider {
-  border: 1px solid rgba(255, 255, 255, 0.1);
-  margin: 40px 0;
-}
-
-.dashboard-insights h3 {
-  color: #fff;
-  margin-bottom: 20px;
-}
-
-.cards-container {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+.dashboard-cards {
+  display: flex;
+  flex-wrap: wrap;
   gap: 20px;
 }
 
 .dashboard-card {
-  background-color: white;
+  flex: 1 1 300px;
+  background-color: #ffffff;
+  color: #6e1dd1;
   border-radius: 16px;
   padding: 20px;
-  color: #333;
 }
 
-.dashboard-card h4 {
-  color: #4B0082;
+.dashboard-card h3 {
+  display: flex;
+  align-items: center;
+  font-size: 18px;
   margin-bottom: 10px;
+}
+
+.dashboard-card h3 svg {
+  margin-right: 10px;
+  color: #6e1dd1;
+}
+
+.dashboard-card p {
+  color: #333;
+  font-family: sans-serif;
+}
+
+button.logout {
+  background: none;
+  color: white;
+  border: none;
+  cursor: pointer;
 }
